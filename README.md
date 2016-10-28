@@ -11,4 +11,5 @@ See https://crosswalk-project.org/contribute/building_crosswalk/prerequisites.ht
 	(cd src && ./build/install-build-deps-android.sh)
 	mkdir -p src/out/Default
 	cp args.gn src/out/Default/
-	(cd src && ninja -t clean && ninja -C out/Default xwalk_core_library__aar
+	(cd src && gn gen out/Default)
+	(cd src/out/Default && ninja -t clean && ninja xwalk_core_library__aar)
