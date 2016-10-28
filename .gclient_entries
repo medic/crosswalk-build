@@ -1,0 +1,3 @@
+entries = {
+  'src/xwalk': 'https://github.com/medic/crosswalk.git',
+}
