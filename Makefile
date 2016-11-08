@@ -7,6 +7,10 @@ build: dependencies configure
 		ninja -t clean && \
 		ninja xwalk_core_library__aar)
 
+restart:
+	(cd src/out/Default && \
+		ninja xwalk_core_library__aar)
+
 configure:
 	mkdir -p src/out/Default && \
 		(cd src && gn gen out/Default) && \
