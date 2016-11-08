@@ -1,5 +1,5 @@
 entries = {
-  'src': 'https://github.com/medic/chromium-crosswalk.git@ad6615e64e0fdf1a11b610f9d04ef461e921da11',
+  'src': 'https://github.com/medic/chromium-crosswalk.git@aab0d57156c87de6c7a7232961cb08bfa566f9ac',
   'src/xwalk/buildtools': 'https://chromium.googlesource.com/chromium/buildtools.git@454e53abae6e4d68ee992b0a93a4174b75519393',
   'build': None,
   'build/scripts/command_wrapper/bin': None,
