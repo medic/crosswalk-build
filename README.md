@@ -10,10 +10,10 @@ The build takes a lot of disk space (40GB+?) and requires a fair amount of downl
 
 	git clone git@github.com:medic/crosswalk-build.git medic-crosswalk && \
 	cd medic-crosswalk && \
-	make
+	make build
 
 ## Remotely
 
 	git clone git@github.com:medic/crosswalk-build.git medic-crosswalk && \
 	cd medic-crosswalk && \
-	(nohup make & tail -F nohup.out)
+	(nohup make build & tail -F nohup.out)
