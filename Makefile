@@ -1,13 +1,15 @@
-.PHONY: build dependencies configure
+.PHONY: default build continue dependencies configure
 
 export XWALK_OS_ANDROID=1
+
+default: continue
 
 build: dependencies configure
 	(cd src/out/Default && \
 		ninja -t clean && \
 		ninja xwalk_core_library__aar)
 
-restart:
+continue:
 	(cd src/out/Default && \
 		ninja xwalk_core_library__aar)
 
