@@ -11,7 +11,8 @@ build: dependencies configure
 
 continue:
 	(cd src/out/Default && \
-		ninja xwalk_core_library__aar)
+		ninja xwalk_core_library__aar && \
+		ls -al xwalk_core_library.aar)
 
 configure:
 	mkdir -p src/out/Default && \
