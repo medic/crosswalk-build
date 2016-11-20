@@ -1,0 +1,19 @@
+#!/bin/bash -eu
+
+build_recursive_index() {
+	local wd="$(pwd)"
+	echo '<html><body><h1>'"${wd#${root_dir}}"'</h1><ul>' > index.html
+	for f in *; do
+		if [[ -d "$f" ]]; then
+			(cd "$f"; build_recursive_index)
+			f="${f}/"
+		fi
+		echo '    <li><a href="./'"$f"'">'"$f"'</li>' >> index.html
+	done
+	echo '</ul></body></html>' >> index.html
+}
+
+cd maven
+root_dir="$(pwd)"
+
+build_recursive_index
