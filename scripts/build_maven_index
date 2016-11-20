@@ -2,13 +2,16 @@
 
 build_recursive_index() {
 	local wd="$(pwd)"
-	echo '<html><body><h1>'"${wd#${root_dir}}"'</h1><ul>' > index.html
+	local title="${wd#${root_dir}}"
+	echo '<html><body><h1>'"${title:-/}"'</h1><ul>' > index.html
+	echo '  <li><a href="..">..</a>' >> index.html
 	for f in *; do
+		[[ "$f" = "index.html" ]] && continue
 		if [[ -d "$f" ]]; then
 			(cd "$f"; build_recursive_index)
 			f="${f}/"
 		fi
-		echo '    <li><a href="./'"$f"'">'"$f"'</li>' >> index.html
+		echo '  <li><a href="./'"$f"'">'"$f"'</li>' >> index.html
 	done
 	echo '</ul></body></html>' >> index.html
 }
