@@ -37,7 +37,8 @@ release:
 	# Create a .bak file to maintain compatibility between GNU and BSD sed
 	sed -i.bak -e 's/__TARGET_VERSION__/${TARGET_VERSION}/' '${MAVEN_POM}'
 	rm '${MAVEN_POM}.bak'
-	git add '${MAVEN_DIR}'
+	./scripts/build_maven_index
+	git add 'maven/'
 	git commit -m 'Release: ${TARGET_VERSION}'
 	git tag 'medic-${TARGET_VERSION}'
 	git push origin gh-pages
