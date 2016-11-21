@@ -39,8 +39,8 @@ release:
 	rm '${MAVEN_POM}.bak'
 	./scripts/build_maven_index
 	git add 'maven/'
+	git push origin gh-pages
+	git checkout -
 	git commit -m 'Release: ${TARGET_VERSION}'
 	git tag 'medic-${TARGET_VERSION}'
-	git push origin gh-pages
 	git push --tags
-	git checkout -
