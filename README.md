@@ -26,10 +26,6 @@ To include this custom `.aar` file in our projects, we use the following gradle 
 		compile 'org.medicmobile.crosswalk:xwalk_core_library:x.y.z'
 	}
 
-## How do we build it?
-
-For details of building this code, see the repo at https://github.com/medic/crosswalk-build.
-
 ## How do we deploy it?
 
 We serve a simple maven repository from the github-pages URL of this repository.  The repo address is https://medic.github.io/crosswalk-chromium/maven.  To upload your build to this repo, first build the `aar` file (as per the instructions below), and then:
