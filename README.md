@@ -37,6 +37,19 @@ We serve a simple maven repository from the github-pages URL of this repository.
 	make release TARGET_VERSION=x.y.z
 
 
+# Updating Crosswalk
+
+## Stable branches
+
+The Crosswalk project maintains [branches for each version](https://github.com/crosswalk-project/crosswalk/branches).  The latest branch named `crosswalk-X` is likely to be in development (beta), and the previous to be the last stable branch.  At the time of writing this document, [branch `crosswalk-23` was the beta branch](https://github.com/crosswalk-project/crosswalk/tree/crosswalk-23) and [`crosswalk-22` was the latest stable branch](https://github.com/crosswalk-project/crosswalk/tree/crosswalk-22).
+
+The long-term goal is to get our changes accepted upstream.  Until then, we aim to keep the medic fork of crosswalk up-to-date with the latest stable branch from upstream.  Our changes should be **rebased** onto the latest stable branch when there are new changes, and then a new version of medic's fork should be built and released.
+
+## What to change
+
+	1. rebase [our changes](https://github.com/medic/crosswalk) onto the latest stable branch of [crosswalk](https://github.com/crosswalk-project/crosswalk)
+	2. update the reference to _____TODO_____ in file `_____TODO_____`
+
 # Building
 
 ## Prerequisites
