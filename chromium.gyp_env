@@ -1,0 +1,3 @@
+ {
+   'GYP_DEFINES': 'OS=android',
+ }
