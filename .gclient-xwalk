@@ -17,19 +17,18 @@
 # Edit these when rolling DEPS.xwalk.
 # -----------------------------------
 
-chromium_crosswalk_rev = '7293573abeaafd5af073feab903b16b90a882af3'
-v8_crosswalk_rev = 'a48e44faef59edeb1fb254233a1c12b5d5999432'
+chromium_crosswalk_rev = 'cbf42ea903acd7510548806a99efd200da37d492'
+v8_crosswalk_rev = 'edf5696a198dc08fd3647910baf62ec71b6133a5'
 
 # We need our own copy of src/buildtools in order to have the gn and
 # clang-format binaries in a location that can be found automatically both by
 # our bots as well as locally for our developers. Its hash does not necessarily
 # need to be rolled together with |chromium_crosswalk_rev|, but it is good
 # practice to not have it lag behind too much.
-buildtools_rev = '454e53abae6e4d68ee992b0a93a4174b75519393'
+buildtools_rev = '06e80a0e17319868d4a9b13f9bb6a248dc8d8b20'
 
 chromium_git = 'https://chromium.googlesource.com'
 crosswalk_git = 'https://github.com/crosswalk-project'
-medic_git = 'https://github.com/medic'
 
 # ------------------------------------------------------
 # gclient solutions.
@@ -38,12 +37,12 @@ medic_git = 'https://github.com/medic'
 
 solutions = [
   { 'name': 'src',
-    'url': medic_git + '/chromium-crosswalk.git@' + chromium_crosswalk_rev,
+    'url': crosswalk_git + '/chromium-crosswalk.git@' + chromium_crosswalk_rev,
     'deps_file': '.DEPS.git',
     'managed': True,
     'custom_deps': {
       'src':
-        medic_git + '/chromium-crosswalk.git@' + chromium_crosswalk_rev,
+        crosswalk_git + '/chromium-crosswalk.git@' + chromium_crosswalk_rev,
       'src/v8':
         crosswalk_git + '/v8-crosswalk.git@' + v8_crosswalk_rev,
 
