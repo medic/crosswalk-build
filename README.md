@@ -66,3 +66,51 @@ The build takes a lot of disk space (40GB+?) and requires a fair amount of downl
 	git clone git@github.com:medic/crosswalk-build.git medic-crosswalk && \
 	cd medic-crosswalk && \
 	(nohup make build & tail -F nohup.out)
+
+## Working with branches
+
+When the build is run, `ninja`/`gn`/`gyp` automatically updates the local versions of `crosswalk` and `chromium-crosswalk`.  The version of `crosswalk` used depends on the content of the file `.gclient` in the root directory of this project.  The version of `chromium-crosswalk` depends on the commit hash specified in `DEPS.xwalk` in the root of the `crosswalk` project (i.e. `src/xwalk/DEPS.xwalk`).
+
+Here are some example `.gclient` configurations to build different branches of `crosswalk`:
+
+### Building `master`
+
+	solutions = [
+	  { "name"        : "src/xwalk",
+	    "url"         : "https://github.com/medic/crosswalk.git",
+	    "deps_file"   : "DEPS",
+	    "managed"     : True,
+	    "custom_deps" : {
+	    },
+	    "safesync_url": "",
+	  },
+	]
+	cache_dir = None
+
+### Building branch `my-branch`
+
+	solutions = [
+	  { "name"        : "src/xwalk",
+	    "url"         : "https://github.com/medic/crosswalk.git@my-branch",
+	    "deps_file"   : "DEPS",
+	    "managed"     : True,
+	    "custom_deps" : {
+	    },
+	    "safesync_url": "",
+	  },
+	]
+	cache_dir = None
+
+### Building the local copy
+
+	solutions = [
+	  { "name"        : "src/xwalk",
+	    "url"         : "https://github.com/medic/crosswalk.git",
+	    "deps_file"   : "DEPS",
+	    "managed"     : False,
+	    "custom_deps" : {
+	    },
+	    "safesync_url": "",
+	  },
+	]
+	cache_dir = None
