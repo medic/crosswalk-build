@@ -43,8 +43,7 @@ The long-term goal is to get our changes accepted upstream.  Until then, we aim 
 
 ## What to change
 
-	1. rebase [our changes](https://github.com/medic/crosswalk) onto the latest stable branch of [crosswalk](https://github.com/crosswalk-project/crosswalk)
-	2. update the reference to _____TODO_____ in file `_____TODO_____`
+Rebase [our changes](https://github.com/medic/crosswalk) onto the latest stable branch of [crosswalk](https://github.com/crosswalk-project/crosswalk).  If no changes are made to `.gclient`, the latest head of https://github.com/medic/crosswalk will be built.  It would be wise to test changes on a separate branch before pushing to master; see [the section on working with branches](https://github.com/medic/crosswalk-build#working-with-branches) below.
 
 # Building
 
