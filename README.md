@@ -113,3 +113,10 @@ Here are some example `.gclient` configurations to build different branches of `
 	  },
 	]
 	cache_dir = None
+
+# Processor Architecture
+
+Currently, this project is set up to only support arm32 processors.  If support for x86 or 64-bit processors (arm, or otherwise), is required we will have to do a couple of things:
+
+1. run the build multiple times with different values for `GYP_DEFINES`
+2. take the `/jni` directory from each different `.aar` that the builds for different architectures provide, and combine them into a single `.aar` file, which would be the one that we publish.
